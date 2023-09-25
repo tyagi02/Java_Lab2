@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int user = input.nextInt(), reverse_no = 0;
+        while (user > 0) {
+            int add_no = user % 10;
+            reverse_no += add_no * (int) (Math.pow(10, (int) (Math.log10(user))));
+            user /= 10;
+        }
+        System.out.println(reverse_no);
+        input.close();
+    }
+}
