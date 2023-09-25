@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int user = input.nextInt();
+        for (int i = 0; i < user; i++) {
+            int carn = input.nextInt(), summationeven = 0, summationodd = 0, counterno = 1;
+            while (carn > 0) {
+                int addno = carn % 10;
+                carn /= 10;
+                if (counterno % 2 == 0) {
+                    summationeven += addno;
+
+                } else {
+                    summationodd += addno;
+                }
+                counterno++;
+            }
+            System.out.println(summationeven + " " + summationodd);
+            if ((summationeven % 4 == 0) | (summationodd % 3 == 0)) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("No");
+            }
+        }
+        input.close();
+    }
+}
