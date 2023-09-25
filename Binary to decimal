@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        long userinput = giveinput.nextInt();
+        long addition = 0, bycounter = 1;
+        while (userinput != 0) {
+            addition = addition + (userinput % 10) * bycounter;
+            userinput /= 10;
+            bycounter *= 2;
+        }
+        System.out.println(addition);
+        giveinput.close();
+    }
+}
