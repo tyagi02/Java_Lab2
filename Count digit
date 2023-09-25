@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+
+        int userinput = giveinput.nextInt();
+        int checkingnumber = giveinput.nextInt();
+        int summation = 0;
+
+        while (userinput > 0) {
+            if (userinput % 10 == checkingnumber) {
+                summation += 1;
+            }
+            userinput = userinput / 10;
+        }
+        System.out.println(summation);
+        giveinput.close();
+    }
+}
