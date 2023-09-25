@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        long userinputone = giveinput.nextInt(), userinputtwo = giveinput.nextInt();
+        while (userinputone % userinputtwo != 0) {
+            long temporaryvariable = userinputtwo;
+            userinputtwo = userinputone % userinputtwo;
+            userinputone = temporaryvariable;
+        }
+        System.out.println(userinputtwo);
+        giveinput.close();
+    }
+}
