@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        int userinput = giveinput.nextInt();
+        int fibocount0 = 0, fibocount1 = 1;
+        while (userinput > 0) {
+            int tempvariable = fibocount1;
+            fibocount1 += fibocount0;
+            fibocount0 = tempvariable;
+            userinput--;
+        }
+        System.out.println(fibocount0);
+        giveinput.close();
+    }
+}
