@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        long user = input.nextLong(), number = user, addition = 0, power = 1;
+        if (user == 0) {
+            addition = 5;
+        } else {
+            while (number > 0) {
+                long r = number % 10;
+                if (r == 0) {
+                    r = 5;
+                }
+                addition += r * power;
+                power *= 10;
+                number /= 10;
+            }
+        }
+        System.out.print(addition);
+        input.close();
+    }
+}
