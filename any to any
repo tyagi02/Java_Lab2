@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        int s_r_d_b = giveinput.nextInt();
+        int f_r_d_p = giveinput.nextInt();
+        int number = giveinput.nextInt();
+        int nono = 0;
+        for (int loopcounter = 0; number > 0; loopcounter++) {
+            int reminder = number % 10;
+            number /= 10;
+            nono += reminder * (int) Math.pow(s_r_d_b, loopcounter);
+        }
+        int ans = 0;
+        for (int loopcounter = 0; nono > 0; loopcounter++) {
+            ans += (nono % f_r_d_p) * (int) Math.pow(10, loopcounter);
+            nono /= f_r_d_p;
+        }
+        System.out.println(ans);
+        giveinput.close();
+    }
+}
