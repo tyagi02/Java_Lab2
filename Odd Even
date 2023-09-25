@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int userinput = input.nextInt();
+        int evensummation = 0;
+        int oddsummation = 0;
+
+        for (int abc = 1; userinput > 0; abc++) {
+            int addnumber = userinput % 10;
+            userinput /= 10;
+            if (abc % 2 == 0) {
+                evensummation += addnumber;
+            } else {
+                oddsummation += addnumber;
+            }
+        }
+        System.out.println(oddsummation);
+        System.out.println(evensummation);
+
+        input.close();
+    }
+}
