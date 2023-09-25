@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        int minimumtemperature = giveinput.nextInt();
+        int maximumtemperature = giveinput.nextInt();
+        int stepstoincrease = giveinput.nextInt();
+        while (minimumtemperature <= maximumtemperature) {
+            System.out.print(minimumtemperature);
+            System.out.print(' ');
+            System.out.println((minimumtemperature - 32) * 5 / 9);
+            minimumtemperature = minimumtemperature + stepstoincrease;
+        }
+        giveinput.close();
+    }
+}
