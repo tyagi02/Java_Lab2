@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static boolean armchecker(int inpu) {
+        int lengthofinpu = (int) (Math.log10(inpu)) + 1;
+        int checkinpu = inpu;
+        int armcheck = 0;
+        while (inpu > 0) {
+            int remainder = inpu % 10;
+            inpu /= 10;
+            armcheck = armcheck + (int) (Math.pow(remainder, lengthofinpu));
+        }
+        boolean result = armcheck == checkinpu;
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        int userinput1 = giveinput.nextInt();
+        int userinput2 = giveinput.nextInt();
+        for (int loopcounter = userinput1; loopcounter <= userinput2; loopcounter++) {
+            if (armchecker(loopcounter)) {
+                System.out.println(loopcounter);
+            }
+        }
+        giveinput.close();
+    }
+}
