@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner giveinput = new Scanner(System.in);
+        int userinput = giveinput.nextInt();
+        int copied = userinput;
+        int sumdigit = 0;
+        int addfactor = 0;
+        while (userinput > 0) {
+            sumdigit += userinput % 10;
+            userinput /= 10;
+        }
+        userinput = copied;
+        int factors = 2;
+        while (userinput > 1) {
+            while (userinput % factors == 0) {
+                addfactor += factors;
+                userinput /= factors;
+            }
+            factors++;
+        }
+        if (addfactor == sumdigit) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
+        giveinput.close();
+    }
+}
